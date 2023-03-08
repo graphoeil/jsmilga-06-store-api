@@ -104,6 +104,14 @@ const getAllIkeaProducts = async(req, res) => {
 		ikeaProducts
 	});
 };
+// DEV - Liddy => http://localhost:3000/api/v1/products/liddy
+const getAllLiddyProducts = async(req, res) => {
+	const liddyProducts = await Product.find({ company:'liddy' });
+	res.status(200).json({
+		nbHits:liddyProducts.length,
+		liddyProducts
+	});
+};
 //
 // Static approach => hard coded
 const getAllProductsStatic = async(req, res) => {
@@ -135,4 +143,4 @@ const createProduct = async(req, res) => {
 };
 
 // Exports
-module.exports = { getAllProducts, getAllIkeaProducts, getAllProductsStatic, createProduct };
+module.exports = { getAllProducts, getAllIkeaProducts, getAllLiddyProducts, getAllProductsStatic, createProduct };

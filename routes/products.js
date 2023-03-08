@@ -1,6 +1,6 @@
 // Imports
 const express = require('express');
-const { getAllProducts, createProduct, getAllIkeaProducts, getAllProductsStatic } = require('../controllers/products');
+const { getAllProducts, createProduct, getAllIkeaProducts, getAllLiddyProducts, getAllProductsStatic } = require('../controllers/products');
 
 // Router
 const router = express.Router();
@@ -9,6 +9,7 @@ const router = express.Router();
 // Get all products
 router.get('/', getAllProducts); // or router.route('/').get(getAllProducts);
 router.get('/ikea', getAllIkeaProducts);
+router.get('/liddy', getAllLiddyProducts);
 router.get('/static', getAllProductsStatic); // or router.route('/static').get(getAllProductsStatic);
 // Create product
 router.post('/', createProduct);
